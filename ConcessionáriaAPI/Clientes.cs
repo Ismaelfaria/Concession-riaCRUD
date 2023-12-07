@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ConcessionáriaAPI
 {
-    public partial class Form1 : Form
+    public partial class Clientes : Form
     {
-        public Form1()
+        public Clientes()
         {
             InitializeComponent();
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Registros registros = new Registros();
-          
-            this.Hide();
-            registros.ShowDialog();
-            this.Close();
-        }
-
     }
 }

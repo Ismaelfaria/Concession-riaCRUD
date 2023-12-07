@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ConcessionáriaAPI.Controller;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,6 @@ namespace ConcessionáriaAPI
 {
     public partial class Registros : Form
     {
-        MySqlConnection conn;
-        string sql = "datasource=localhost;username=root;password=123456;database=db_concessionária";
         private int? id = null;
         public Registros()
         {
@@ -47,72 +46,23 @@ namespace ConcessionáriaAPI
 
         private void carregarContatos()
         {
-            try
-            {
-                conn = new MySqlConnection(sql);
-                conn.Open();
-                MySqlCommand com = new MySqlCommand();
-                com.Connection = conn;
-
-                com.CommandText = "SELECT * FROM carro ORDER BY id DESC ";
-                com.Prepare();
-
-
-
-                MySqlDataReader reader = com.ExecuteReader();
-                listCarro.Items.Clear();
-
-                while (reader.Read())
-                {
-                    string[] row =
-                    {
-                        reader.GetString(0),
-                        reader.GetString(1),
-                        reader.GetString(2),
-                        reader.GetString(3),
-                        reader.GetString(4),
-                    };
-
-                    var linhaRegistro = new ListViewItem(row);
-                    listCarro.Items.Add(linhaRegistro);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            var control = new ConcessionariaController();
+            control.carregarContato(listCarro);
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            try
-            {
+            var control = new ConcessionariaController();
+            control.deletarCarro(id);
+            control.carregarContato(listCarro);
+        }
 
-                conn = new MySqlConnection(sql);
-                conn.Open();
-                MySqlCommand com = new MySqlCommand();
-                com.Connection = conn;
-
-                com.CommandText = "DELETE FROM carro WHERE id=@id ";
-                com.Parameters.AddWithValue("@id", id);
-                com.Prepare();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Carro Excluido");
-                carregarContatos();
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var carro = new Carro();
+            this.Hide();
+            carro.ShowDialog();
+            this.Close();
         }
     }
 }

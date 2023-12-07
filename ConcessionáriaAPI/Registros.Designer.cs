@@ -30,34 +30,46 @@
         {
             this.listCarro = new System.Windows.Forms.ListView();
             this.Delete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listCarro
             // 
             this.listCarro.HideSelection = false;
-            this.listCarro.Location = new System.Drawing.Point(12, 12);
+            this.listCarro.Location = new System.Drawing.Point(88, 93);
             this.listCarro.MultiSelect = false;
             this.listCarro.Name = "listCarro";
-            this.listCarro.Size = new System.Drawing.Size(513, 250);
+            this.listCarro.Size = new System.Drawing.Size(321, 178);
             this.listCarro.TabIndex = 0;
             this.listCarro.UseCompatibleStateImageBehavior = false;
             this.listCarro.SelectedIndexChanged += new System.EventHandler(this.listCarro_SelectedIndexChanged);
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(234, 281);
+            this.Delete.Location = new System.Drawing.Point(426, 93);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(67, 22);
+            this.Delete.Size = new System.Drawing.Size(67, 178);
             this.Delete.TabIndex = 1;
             this.Delete.Text = "Deletar";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(388, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 310);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.listCarro);
             this.Name = "Registros";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.ListView listCarro;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button button1;
     }
 }
