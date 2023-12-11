@@ -36,19 +36,19 @@
             // listCarro
             // 
             this.listCarro.HideSelection = false;
-            this.listCarro.Location = new System.Drawing.Point(88, 93);
+            this.listCarro.Location = new System.Drawing.Point(45, 55);
             this.listCarro.MultiSelect = false;
             this.listCarro.Name = "listCarro";
-            this.listCarro.Size = new System.Drawing.Size(321, 178);
+            this.listCarro.Size = new System.Drawing.Size(364, 216);
             this.listCarro.TabIndex = 0;
             this.listCarro.UseCompatibleStateImageBehavior = false;
             this.listCarro.SelectedIndexChanged += new System.EventHandler(this.listCarro_SelectedIndexChanged);
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(426, 93);
+            this.Delete.Location = new System.Drawing.Point(426, 55);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(67, 178);
+            this.Delete.Size = new System.Drawing.Size(67, 216);
             this.Delete.TabIndex = 1;
             this.Delete.Text = "Deletar";
             this.Delete.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             this.button1.Location = new System.Drawing.Point(388, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.Size = new System.Drawing.Size(104, 36);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

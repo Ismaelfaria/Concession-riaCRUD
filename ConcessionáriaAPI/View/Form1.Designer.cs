@@ -34,7 +34,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(81, 0);
+            this.button1.Location = new System.Drawing.Point(132, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 38);
             this.button1.TabIndex = 1;
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 216);
+            this.ClientSize = new System.Drawing.Size(387, 107);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";

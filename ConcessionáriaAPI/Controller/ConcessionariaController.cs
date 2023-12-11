@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,9 @@ namespace ConcessionáriaAPI.Controller
     internal class ConcessionariaController
     {
         MySqlConnection conn;
-        string sql = "datasource=localhost;username=root;password=123456;database=db_concessionária";
+        string sql = ConfigurationManager.AppSettings["databaseInformation"];
         MySqlCommand com = new MySqlCommand();
+
         public void adicionarCarro(Model.ConcessionarioNovosCarros novoCarro)
         {
             try
@@ -78,8 +80,6 @@ namespace ConcessionáriaAPI.Controller
 
                 com.CommandText = "SELECT * FROM carro ORDER BY id DESC ";
                 com.Prepare();
-
-
 
                 MySqlDataReader reader = com.ExecuteReader();
                 listCarro.Items.Clear();
